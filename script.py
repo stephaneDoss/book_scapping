@@ -39,7 +39,7 @@ def get_book_data(soup):
             title_element = (article.find('h3')).find('a')
             price_element = (article.find("div", class_="product_price")).find(
                 "p", class_="price_color")
-            title = title_element.text.strip()
+            title = title_element.get('title')
             price = price_element.text.strip()
             book = {
                 "titre": title,
